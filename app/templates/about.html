@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="margin:0; padding: 0;position: relative;">
+    <img src="static/back.png" alt="background" height="100%" width="100%">
+    <p style="position: absolute; left: 15%; top: 11%; color: #6B6B6B; font-size:50px;"><a style="text-decoration:none; color:slategray" href="{{ url_for('index') }}">An Open-Source Code Visualization Tool</a></p>
+</div>
+<div class="container" style="margin-left: 18%; margin-top: 50px;">
+    <p style="font-size:50px;">About me</p>
+    <div style="margin-left: 40px; margin-top: 20px; font-size:20px; font-weight: 100; color: black;">
+        <p>Creator: Yueyuan Xiao</p>
+        <p>My email address is: xiao971230@gmail.com</p>
+        <p>
+            You can also visit my <a style="text-decoration: none;color: #DB7093;"
+                href="https://github.com/Jervisxiao">GitHub Homepage</a>
+        </p>
+        <p>If you are interested in this website, please feel free to contact me!</p>
+    </div>
+</div>
+<div class="container" style="margin-left: 18%; margin-top: 50px;">
+    <p style="font-size:50px;">About the website</p>
+    <div style="margin-left: 40px; margin-top: 20px; font-size:20px; font-weight: 100; color: black;">
+        <p>This is an open-source tool that helps visualize your PYTHON code logics and structures.</p>
+        <p>Notes:</p>
+        <div style="color: #DB7093; font-size: 16px; margin-left: 40px;">
+            <p>1. Click "Home" on the top right corner or "An Open-Source Code  Visualization Tool" to enter the main page.</p>
+            <p>2. You could put your github link in the InputField.</p>
+            <p style="color: #FF4040">3. The link should start with "https://raw.githubusercontent.com/".</p>
+            <p>4. Click "Visualize" button.</p>
+            <p>5. A tree diagram will show up and display your code logics and structures </p>
+
+            <br>                
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+{% endblock %}

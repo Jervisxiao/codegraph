@@ -1,0 +1,39 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}{{ title }} - Codegraph{% else %}Welcome to Codegraph{% endif %}
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default" style=height:65px>
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="margin-top:-0.2cm; margin-left: -1cm;"  href="{{ url_for('index') }}">
+                    <img alt="Brand" src="{{ url_for('static', filename='logo.png') }}" width="150px" height="50px" >
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" style="margin-top:0cm; margin-right: 1cm;" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right" style=font-size:18px>
+                    <li style="margin-top:0.2cm"><a href="{{ url_for('index') }}">Home</a></li>
+                    <li style="margin-top:0.2cm"><a href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
